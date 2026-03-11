@@ -39,6 +39,10 @@
         <a href="#team"       class="nav-link text-text-secondary hover:text-text-primary transition-colors">Team</a>
         <a href="#how"        class="nav-link text-text-secondary hover:text-text-primary transition-colors">How it Works</a>
         <a href="#highlights" class="nav-link text-text-secondary hover:text-text-primary transition-colors">架構亮點</a>
+        <a href="https://github.com/david8015838-create/ai-office-website" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-text-secondary hover:text-text-primary hover:border-white/20 transition-all">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
       </div>
       <!-- Mobile menu button -->
       <button id="mobile-menu-btn" class="sm:hidden text-text-secondary hover:text-text-primary p-2" aria-label="Menu">
@@ -57,10 +61,12 @@
 
   <!-- ===== HERO ===== -->
   <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+    <canvas id="hero-particles" class="absolute inset-0 z-0 pointer-events-none"></canvas>
     <!-- Radial glow layers -->
     <div class="hero-glow-indigo"></div>
     <div class="hero-glow-violet"></div>
     <div class="hero-glow-pink"></div>
+    <div class="hero-glow-aurora"></div>
     <!-- Grid texture -->
     <div class="hero-grid-bg absolute inset-0"></div>
 
@@ -70,7 +76,7 @@
         All agents online
       </div>
       <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-4">
-        <span class="gradient-text shimmer-text">AI Office</span>
+        <span class="gradient-text shimmer-text" id="hero-typewriter"></span><span class="typewriter-cursor">|</span>
       </h1>
       <p class="text-2xl md:text-3xl font-light text-text-secondary mb-4">虛擬 AI 辦公室</p>
       <p class="text-lg text-text-muted max-w-xl mx-auto mb-12 leading-relaxed">
@@ -120,6 +126,13 @@
                 <line x1="17.2" y1="22.8" x2="10" y2="30"/>
               </svg>
             </div>
+            <div class="agent-role-badge" style="background: rgba(79,142,247,0.15); border-color: rgba(79,142,247,0.3); color: #4f8ef7">MANAGER</div>
+            <div class="agent-stat-chip">
+              <span class="stat-bar" style="--h:60%; background:#4f8ef7"></span>
+              <span class="stat-bar" style="--h:90%; background:#4f8ef7"></span>
+              <span class="stat-bar" style="--h:45%; background:#4f8ef7"></span>
+              <span class="stat-bar" style="--h:75%; background:#4f8ef7"></span>
+            </div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-1 text-text-primary">Alex</h3>
@@ -147,6 +160,8 @@
                 <line x1="22" y1="9" x2="18" y2="31"/>
               </svg>
             </div>
+            <div class="agent-role-badge" style="background: rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.3); color: #34d399">ENGINEER</div>
+            <div class="agent-code-lines" style="color: rgba(52,211,153,0.5)">// 247 commits</div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-1 text-text-primary">Dev</h3>
@@ -176,6 +191,13 @@
                 <circle cx="20" cy="6" r="1" fill="#c084fc"/>
               </svg>
             </div>
+            <div class="agent-role-badge" style="background: rgba(192,132,252,0.15); border-color: rgba(192,132,252,0.3); color: #c084fc">DESIGNER</div>
+            <div class="agent-palette">
+              <span style="background:#c084fc"></span>
+              <span style="background:#f472b6"></span>
+              <span style="background:#60a5fa"></span>
+              <span style="background:#34d399"></span>
+            </div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-1 text-text-primary">Aria</h3>
@@ -201,6 +223,11 @@
                 <circle cx="17" cy="17" r="9"/>
                 <line x1="23.5" y1="23.5" x2="33" y2="33"/>
               </svg>
+            </div>
+            <div class="agent-role-badge" style="background: rgba(248,113,113,0.15); border-color: rgba(248,113,113,0.3); color: #f87171">QA</div>
+            <div class="agent-qa-bar">
+              <div class="qa-bar-fill" style="width: 94%; background: linear-gradient(90deg, #f87171, #fbbf24)"></div>
+              <span class="qa-bar-label" style="color: rgba(248,113,113,0.7)">94% pass</span>
             </div>
           </div>
           <div class="p-6">
@@ -228,6 +255,11 @@
                 <circle cx="20" cy="20" r="5"/>
                 <circle cx="20" cy="20" r="2" fill="#22d3ee"/>
               </svg>
+            </div>
+            <div class="agent-role-badge" style="background: rgba(34,211,238,0.15); border-color: rgba(34,211,238,0.3); color: #22d3ee">UX REVIEW</div>
+            <div class="agent-score" style="color: #22d3ee">
+              <span>★★★★</span><span style="opacity:0.3">★</span>
+              <span class="score-num">8.5</span>
             </div>
           </div>
           <div class="p-6">
@@ -258,6 +290,8 @@
                 <line x1="13" y1="23" x2="20" y2="23"/>
               </svg>
             </div>
+            <div class="agent-role-badge" style="background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.3); color: #fbbf24">DOCS</div>
+            <div class="agent-log-lines" style="color: rgba(251,191,36,0.4)">LOG 12:34:21</div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-1 text-text-primary">Memo</h3>
@@ -409,17 +443,75 @@
     </div>
   </section>
 
+  <!-- ===== OPEN SOURCE CTA ===== -->
+  <section id="open-source" class="py-24 px-6 section-bg-alt">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-sm mb-8 text-text-secondary backdrop-blur-sm section-reveal">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        Open Source
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black mb-6 text-text-primary section-reveal">
+        5 分鐘，複製你的<br><span class="gradient-text">AI Office</span>
+      </h2>
+      <p class="text-lg text-text-secondary max-w-2xl mx-auto mb-12 leading-relaxed section-reveal">
+        完整開源的 Claude Agent 協作框架。Fork 後改一個設定檔，你就有一個專屬的虛擬 AI 團隊。
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 text-left section-reveal">
+        <div class="oss-step">
+          <div class="oss-step-num">01</div>
+          <div class="oss-step-title">Fork Repo</div>
+          <div class="oss-step-desc">GitHub 上一鍵 Fork，完整複製所有 Agent 設定</div>
+        </div>
+        <div class="oss-step">
+          <div class="oss-step-num">02</div>
+          <div class="oss-step-title">設定 API Key</div>
+          <div class="oss-step-desc">填入你的 Anthropic API Key，其餘設定開箱即用</div>
+        </div>
+        <div class="oss-step">
+          <div class="oss-step-num">03</div>
+          <div class="oss-step-title">開始工作</div>
+          <div class="oss-step-desc">輸入需求，AI 團隊立刻接管，自動規劃到交付</div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 section-reveal">
+        <a href="https://github.com/david8015838-create/ai-office-website" target="_blank" rel="noopener" class="github-cta-btn inline-flex items-center gap-3 font-semibold px-8 py-4 rounded-full">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          在 GitHub 上 Fork
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <a href="#how" class="outline-cta-btn inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-full">
+          查看工作流程
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FOOTER ===== -->
   <footer class="border-t border-bg-overlay py-12 px-6">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <div>
-        <div class="text-xl font-black gradient-text mb-1">AI Office</div>
-        <div class="text-sm text-text-muted">虛擬 AI 辦公室 · 讓 AI 團隊為你工作</div>
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row items-start justify-between gap-8 mb-8">
+        <div class="max-w-xs">
+          <div class="text-xl font-black gradient-text mb-2">AI Office</div>
+          <div class="text-sm text-text-muted leading-relaxed">
+            虛擬 AI 辦公室 · 讓 AI 團隊為你工作<br>
+            <span class="text-xs mt-1 block">Built with Claude · Powered by Anthropic</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-6 text-sm text-text-secondary">
+          <a href="#team" class="hover:text-text-primary transition-colors">Team</a>
+          <a href="#how" class="hover:text-text-primary transition-colors">How it Works</a>
+          <a href="#highlights" class="hover:text-text-primary transition-colors">架構亮點</a>
+          <a href="#open-source" class="hover:text-text-primary transition-colors">開源</a>
+        </div>
+        <a href="https://github.com/david8015838-create/ai-office-website" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary border border-white/10 hover:border-white/20 rounded-full px-4 py-2 transition-all">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          Fork on GitHub
+        </a>
       </div>
-      <div class="flex items-center gap-6 text-sm text-text-secondary">
-        <a href="#team"       class="hover:text-text-primary transition-colors">Team</a>
-        <a href="#how"        class="hover:text-text-primary transition-colors">How it Works</a>
-        <a href="#highlights" class="hover:text-text-primary transition-colors">架構亮點</a>
+      <div class="border-t border-bg-overlay pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-text-muted">
+        <span>MIT License · Open Source · 2026</span>
+        <span>Made with Claude · AI Office Framework</span>
       </div>
     </div>
   </footer>

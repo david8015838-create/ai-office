@@ -76,3 +76,64 @@ const navObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => navObserver.observe(section));
+
+// ===== Hero Typewriter Effect =====
+(function() {
+  const el     = document.getElementById('hero-typewriter');
+  const cursor = document.querySelector('.typewriter-cursor');
+  const text   = 'AI Office';
+  let i = 0;
+  const timer = setInterval(() => {
+    el.textContent = text.slice(0, ++i);
+    if (i === text.length) {
+      clearInterval(timer);
+      cursor.classList.add('done');
+    }
+  }, 110);
+})();
+
+// ===== Hero Particle System =====
+(function() {
+  const canvas = document.getElementById('hero-particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const COLORS = ['rgba(99,102,241,','rgba(139,92,246,','rgba(236,72,153,','rgba(96,165,250,'];
+  let particles = [];
+  let W, H;
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  function randomParticle() {
+    return {
+      x: Math.random() * W, y: Math.random() * H,
+      r: Math.random() * 1.5 + 0.5,
+      vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+      a: Math.random() * 0.6 + 0.1, da: (Math.random() - 0.5) * 0.008,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    };
+  }
+  function init() {
+    resize();
+    const COUNT = Math.floor((W * H) / 8000);
+    particles = Array.from({ length: COUNT }, randomParticle);
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy; p.a += p.da;
+      if (p.x < -5) p.x = W + 5;
+      if (p.x > W + 5) p.x = -5;
+      if (p.y < -5) p.y = H + 5;
+      if (p.y > H + 5) p.y = -5;
+      if (p.a > 0.7 || p.a < 0.1) p.da *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + p.a.toFixed(2) + ')';
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', () => { resize(); init(); }, { passive: true });
+  init(); draw();
+})();

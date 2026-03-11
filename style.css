@@ -87,7 +87,15 @@ body {
 .hero-glow-indigo {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(99,102,241,0.18) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 65% at 50% 25%, rgba(99,102,241,0.28) 0%, rgba(99,102,241,0.08) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-glow-aurora {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 35% at 50% 100%, rgba(139,92,246,0.15) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
 }
@@ -112,8 +120,8 @@ body {
   background-image:
     linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  opacity: 0.04;
+  background-size: 48px 48px;
+  opacity: 0.06;
   z-index: 0;
 }
 
@@ -345,6 +353,26 @@ body {
   align-self: center;
 }
 
+/* ===== Pipeline Flow Animation ===== */
+.pipeline-connector {
+  position: relative;
+  overflow: hidden;
+}
+.pipeline-connector::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: flow-pulse 2.5s ease-in-out infinite;
+}
+@keyframes flow-pulse {
+  0%   { left: -60%; }
+  100% { left: 120%; }
+}
+
 /* Branch list */
 .flow-branches {
   display: flex;
@@ -501,6 +529,166 @@ body {
 .highlight-accent-bar {
   height: 4px;
   width: 100%;
+}
+
+/* ===== Typewriter cursor ===== */
+.typewriter-cursor {
+  color: #a78bfa;
+  animation: blink-cursor 0.8s step-end infinite;
+  font-weight: 300;
+  margin-left: 2px;
+}
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.typewriter-cursor.done {
+  animation: cursor-fadeout 1s ease 1s forwards;
+}
+@keyframes cursor-fadeout {
+  to { opacity: 0; }
+}
+
+/* ===== Agent Card Personality Elements ===== */
+.agent-role-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid;
+  text-transform: uppercase;
+}
+.agent-code-lines {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-size: 9px;
+  font-family: 'Courier New', monospace;
+}
+.agent-palette {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  display: flex;
+  gap: 4px;
+}
+.agent-palette span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+  opacity: 0.8;
+}
+.agent-qa-bar {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  width: 70px;
+}
+.qa-bar-fill {
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: 3px;
+}
+.qa-bar-label {
+  font-size: 9px;
+  font-weight: 700;
+}
+.agent-score {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.score-num {
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.agent-stat-chip {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 20px;
+}
+.stat-bar {
+  width: 5px;
+  height: var(--h);
+  border-radius: 2px 2px 0 0;
+  opacity: 0.7;
+  display: block;
+}
+.agent-log-lines {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-size: 9px;
+  font-family: 'Courier New', monospace;
+}
+
+/* ===== Open Source CTA ===== */
+.oss-step {
+  background: var(--bg-surface);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 20px 24px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.oss-step:hover {
+  border-color: rgba(99,102,241,0.4);
+  transform: translateY(-3px);
+}
+.oss-step-num {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #6366f1;
+  margin-bottom: 8px;
+  font-family: 'Courier New', monospace;
+}
+.oss-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.oss-step-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.github-cta-btn {
+  background: linear-gradient(135deg, #1a1f2e, #252d3d);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 8px 32px rgba(0,0,0,0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.github-cta-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 0 16px 48px rgba(0,0,0,0.4);
+}
+.outline-cta-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+.outline-cta-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.25);
+  color: var(--text-primary);
 }
 
 /* ===== Responsive ===== */
