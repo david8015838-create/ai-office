@@ -92,6 +92,26 @@ sections.forEach((section) => navObserver.observe(section));
   }, 110);
 })();
 
+// ===== Stats counter animation =====
+(function() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  if (!statNumbers.length) return;
+
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('stat-visible');
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  statNumbers.forEach((el) => statsObserver.observe(el));
+})();
+
 // ===== Hero Particle System =====
 (function() {
   const canvas = document.getElementById('hero-particles');
