@@ -14,12 +14,17 @@
       theme: {
         extend: {
           colors: {
-            alex:   '#4f8ef7',
+            alex:   '#60a5fa',
             dev:    '#34d399',
             aria:   '#c084fc',
             tester: '#f87171',
             uma:    '#22d3ee',
             memo:   '#fbbf24',
+            brand: {
+              primary:   '#6366f1',
+              secondary: '#8b5cf6',
+              accent:    '#06b6d4',
+            }
           },
           fontFamily: {
             sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
@@ -39,57 +44,92 @@
         <a href="#team"       class="nav-link text-text-secondary hover:text-text-primary transition-colors">Team</a>
         <a href="#how"        class="nav-link text-text-secondary hover:text-text-primary transition-colors">How it Works</a>
         <a href="#highlights" class="nav-link text-text-secondary hover:text-text-primary transition-colors">架構亮點</a>
-        <a href="https://github.com/david8015838-create/ai-office-website" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-text-secondary hover:text-text-primary hover:border-white/20 transition-all">
-          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <a href="https://github.com/david8015838-create/ai-office-website" target="_blank" rel="noopener"
+           class="nav-github-btn inline-flex items-center gap-1.5 rounded-full px-4 py-1.5">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub
         </a>
       </div>
       <!-- Mobile menu button -->
-      <button id="mobile-menu-btn" class="sm:hidden text-text-secondary hover:text-text-primary p-2" aria-label="Menu">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button id="mobile-menu-btn" class="sm:hidden text-text-secondary hover:text-text-primary p-2" aria-label="開啟選單">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </div>
     <!-- Mobile dropdown -->
     <div id="mobile-menu" class="mobile-menu sm:hidden hidden px-6 pb-4 space-y-3">
-      <a href="#team"       class="block text-text-secondary hover:text-text-primary text-sm font-medium transition-colors">Team</a>
-      <a href="#how"        class="block text-text-secondary hover:text-text-primary text-sm font-medium transition-colors">How it Works</a>
-      <a href="#highlights" class="block text-text-secondary hover:text-text-primary text-sm font-medium transition-colors">架構亮點</a>
+      <a href="#team"       class="block text-text-secondary hover:text-text-primary text-sm font-medium transition-colors py-1">Team</a>
+      <a href="#how"        class="block text-text-secondary hover:text-text-primary text-sm font-medium transition-colors py-1">How it Works</a>
+      <a href="#highlights" class="block text-text-secondary hover:text-text-primary text-sm font-medium transition-colors py-1">架構亮點</a>
+      <a href="#open-source" class="block text-text-secondary hover:text-text-primary text-sm font-medium transition-colors py-1">開源</a>
     </div>
   </nav>
 
   <!-- ===== HERO ===== -->
   <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-    <canvas id="hero-particles" class="absolute inset-0 z-0 pointer-events-none"></canvas>
-    <!-- Radial glow layers -->
-    <div class="hero-glow-indigo"></div>
-    <div class="hero-glow-violet"></div>
-    <div class="hero-glow-pink"></div>
-    <div class="hero-glow-aurora"></div>
+    <canvas id="hero-particles" class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true"></canvas>
+    <!-- Multi-layer radial glow -->
+    <div class="hero-glow-indigo" aria-hidden="true"></div>
+    <div class="hero-glow-violet" aria-hidden="true"></div>
+    <div class="hero-glow-pink"   aria-hidden="true"></div>
+    <div class="hero-glow-aurora" aria-hidden="true"></div>
     <!-- Grid texture -->
-    <div class="hero-grid-bg absolute inset-0"></div>
+    <div class="hero-grid-bg absolute inset-0" aria-hidden="true"></div>
 
     <div class="relative z-10 max-w-3xl mx-auto fade-in">
-      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-sm mb-8 text-text-secondary backdrop-blur-sm">
-        <span class="w-2 h-2 bg-dev rounded-full animate-pulse"></span>
-        All agents online
+      <!-- Status pill -->
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 hero-status-pill">
+          <span class="online-dot" aria-hidden="true"></span>
+          <span>All 6 agents online</span>
+        </div>
       </div>
-      <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-4">
-        <span class="gradient-text shimmer-text" id="hero-typewriter"></span><span class="typewriter-cursor">|</span>
+
+      <!-- Eyebrow label -->
+      <div class="flex justify-center mb-4">
+        <span class="eyebrow-label">Virtual AI Office</span>
+      </div>
+
+      <!-- Hero title with typewriter -->
+      <h1 class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight mb-4" style="letter-spacing: -0.04em; line-height: 1.0">
+        <span class="shimmer-text" id="hero-typewriter" aria-label="AI Office"></span><span class="typewriter-cursor" aria-hidden="true">|</span>
       </h1>
-      <p class="text-2xl md:text-3xl font-light text-text-secondary mb-4">虛擬 AI 辦公室</p>
-      <p class="text-lg text-text-muted max-w-xl mx-auto mb-12 leading-relaxed">
+
+      <!-- Subtitle -->
+      <p class="text-xl md:text-3xl font-light text-text-secondary mb-4" style="letter-spacing: -0.01em">虛擬 AI 辦公室</p>
+
+      <!-- Description -->
+      <p class="text-base md:text-lg text-text-muted max-w-xl mx-auto mb-10 leading-relaxed">
         用自然語言描述你的需求，AI 團隊自動拆解任務、分工協作、品質把關，完整交付成果。
       </p>
-      <a href="#team" class="cta-btn inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-full">
-        認識團隊
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-        </svg>
-      </a>
+
+      <!-- CTA group -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a href="#team" class="btn-primary">
+          認識團隊
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+        <a href="#how" class="btn-secondary">
+          了解工作流程
+        </a>
+      </div>
+
+      <!-- Agent pills row -->
+      <div class="hero-agent-row" role="list" aria-label="AI 團隊成員">
+        <span class="agent-pill agent-pill--alex" role="listitem">Alex · PM</span>
+        <span class="agent-pill agent-pill--dev"  role="listitem">Dev · Engineer</span>
+        <span class="agent-pill agent-pill--aria" role="listitem">Aria · Designer</span>
+        <span class="agent-pill agent-pill--tester" role="listitem">Tester · QA</span>
+        <span class="agent-pill agent-pill--uma"  role="listitem">Uma · UX</span>
+        <span class="agent-pill agent-pill--memo" role="listitem">Memo · Docs</span>
+      </div>
     </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-text-muted animate-bounce">
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-text-muted animate-bounce" aria-hidden="true">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
       </svg>
@@ -97,229 +137,185 @@
   </section>
 
   <!-- ===== TEAM ===== -->
-  <section id="team" class="py-24 px-6">
+  <section id="team" class="py-28 px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 section-reveal">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-text-primary">The Team</h2>
-        <p class="text-text-secondary text-lg">六位各司其職的 AI 員工，組成高效協作的虛擬辦公室</p>
+      <!-- Section header -->
+      <div class="section-header section-reveal">
+        <span class="eyebrow-label">THE TEAM</span>
+        <h2 class="section-title">認識團隊</h2>
+        <p class="section-subtitle">六位各司其職的 AI 員工，組成高效協作的虛擬辦公室</p>
       </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Alex -->
-        <div class="agent-card section-reveal" style="--accent: #4f8ef7; --accent-rgb: 79,142,247">
-          <div class="agent-card-header" style="--accent: #4f8ef7">
+        <article class="agent-card section-reveal" style="--accent: #60a5fa; --accent-rgb: 96,165,250" tabindex="0" aria-label="Alex，專案經理">
+          <div class="agent-card-header" aria-hidden="true">
+            <div class="agent-avatar">
+              <span class="agent-avatar-letter">A</span>
+              <div class="agent-avatar-ring ring-1"></div>
+              <div class="agent-avatar-ring ring-2"></div>
+            </div>
             <div class="agent-online-badge">
               <span class="online-dot"></span>
-              online
+              ONLINE
             </div>
-            <div class="agent-icon-wrap" style="background: rgba(79,142,247,0.15); border-color: rgba(79,142,247,0.35)">
-              <!-- Alex: radial hub / network icon -->
-              <svg class="agent-svg-icon" viewBox="0 0 40 40" fill="none" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round">
-                <circle cx="20" cy="20" r="4" fill="#4f8ef7" opacity="0.9"/>
-                <line x1="20" y1="16" x2="20" y2="6"/>
-                <line x1="20" y1="24" x2="20" y2="34"/>
-                <line x1="16" y1="20" x2="6" y2="20"/>
-                <line x1="24" y1="20" x2="34" y2="20"/>
-                <line x1="17.2" y1="17.2" x2="10" y2="10"/>
-                <line x1="22.8" y1="22.8" x2="30" y2="30"/>
-                <line x1="22.8" y1="17.2" x2="30" y2="10"/>
-                <line x1="17.2" y1="22.8" x2="10" y2="30"/>
-              </svg>
-            </div>
-            <div class="agent-role-badge" style="background: rgba(79,142,247,0.15); border-color: rgba(79,142,247,0.3); color: #4f8ef7">MANAGER</div>
-            <div class="agent-stat-chip">
-              <span class="stat-bar" style="--h:60%; background:#4f8ef7"></span>
-              <span class="stat-bar" style="--h:90%; background:#4f8ef7"></span>
-              <span class="stat-bar" style="--h:45%; background:#4f8ef7"></span>
-              <span class="stat-bar" style="--h:75%; background:#4f8ef7"></span>
-            </div>
+            <div class="agent-role-badge" style="background: rgba(96,165,250,0.12); border-color: rgba(96,165,250,0.3); color: #60a5fa">MANAGER</div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-1 text-text-primary">Alex</h3>
-            <p class="text-sm font-medium mb-4" style="color: #4f8ef7">專案經理 · Project Manager</p>
-            <ul class="text-text-secondary text-sm space-y-1.5">
-              <li>· 理解用戶意圖，識別任務類型</li>
-              <li>· 規劃執行步驟，協調各部門</li>
-              <li>· 確認需求後啟動協作流程</li>
+          <div class="agent-card-body">
+            <h3 class="agent-name">Alex</h3>
+            <p class="agent-role-title" style="color: #60a5fa">專案經理 · Project Manager</p>
+            <ul class="agent-skills" aria-label="主要職責">
+              <li>理解用戶意圖，識別任務類型</li>
+              <li>規劃執行步驟，協調各部門</li>
+              <li>確認需求後啟動協作流程</li>
             </ul>
           </div>
-        </div>
+        </article>
 
         <!-- Dev -->
-        <div class="agent-card section-reveal" style="--accent: #34d399; --accent-rgb: 52,211,153">
-          <div class="agent-card-header" style="--accent: #34d399">
+        <article class="agent-card section-reveal" style="--accent: #34d399; --accent-rgb: 52,211,153" tabindex="0" aria-label="Dev，工程師">
+          <div class="agent-card-header" aria-hidden="true">
+            <div class="agent-avatar">
+              <span class="agent-avatar-letter">D</span>
+              <div class="agent-avatar-ring ring-1"></div>
+              <div class="agent-avatar-ring ring-2"></div>
+            </div>
             <div class="agent-online-badge">
               <span class="online-dot"></span>
-              online
+              ONLINE
             </div>
-            <div class="agent-icon-wrap" style="background: rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.35)">
-              <!-- Dev: code </> icon -->
-              <svg class="agent-svg-icon" viewBox="0 0 40 40" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="14,12 6,20 14,28"/>
-                <polyline points="26,12 34,20 26,28"/>
-                <line x1="22" y1="9" x2="18" y2="31"/>
-              </svg>
-            </div>
-            <div class="agent-role-badge" style="background: rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.3); color: #34d399">ENGINEER</div>
-            <div class="agent-code-lines" style="color: rgba(52,211,153,0.5)">// 247 commits</div>
+            <div class="agent-role-badge" style="background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.3); color: #34d399">ENGINEER</div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-1 text-text-primary">Dev</h3>
-            <p class="text-sm font-medium mb-4" style="color: #34d399">工程師 · Engineer</p>
-            <ul class="text-text-secondary text-sm space-y-1.5">
-              <li>· 執行具體開發與技術實作</li>
-              <li>· 根據規格完成功能交付</li>
-              <li>· 接收 QA 反饋進行修正</li>
+          <div class="agent-card-body">
+            <h3 class="agent-name">Dev</h3>
+            <p class="agent-role-title" style="color: #34d399">工程師 · Engineer</p>
+            <ul class="agent-skills" aria-label="主要職責">
+              <li>執行具體開發與技術實作</li>
+              <li>根據規格完成功能交付</li>
+              <li>接收 QA 反饋進行修正</li>
             </ul>
           </div>
-        </div>
+        </article>
 
         <!-- Aria -->
-        <div class="agent-card section-reveal" style="--accent: #c084fc; --accent-rgb: 192,132,252">
-          <div class="agent-card-header" style="--accent: #c084fc">
+        <article class="agent-card section-reveal" style="--accent: #c084fc; --accent-rgb: 192,132,252" tabindex="0" aria-label="Aria，UI/UX 設計師">
+          <div class="agent-card-header" aria-hidden="true">
+            <div class="agent-avatar">
+              <span class="agent-avatar-letter">Ar</span>
+              <div class="agent-avatar-ring ring-1"></div>
+              <div class="agent-avatar-ring ring-2"></div>
+            </div>
             <div class="agent-online-badge">
               <span class="online-dot"></span>
-              online
+              ONLINE
             </div>
-            <div class="agent-icon-wrap" style="background: rgba(192,132,252,0.15); border-color: rgba(192,132,252,0.35)">
-              <!-- Aria: magic wand / star wand icon -->
-              <svg class="agent-svg-icon" viewBox="0 0 40 40" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="8" y1="32" x2="24" y2="16"/>
-                <path d="M24 16 l2-6 l2 6 l6 2 l-6 2 l-2 6 l-2-6 l-6-2 z" fill="rgba(192,132,252,0.3)" stroke="#c084fc" stroke-width="1.5"/>
-                <circle cx="10" cy="10" r="1.5" fill="#c084fc"/>
-                <circle cx="6" cy="20" r="1" fill="#c084fc"/>
-                <circle cx="20" cy="6" r="1" fill="#c084fc"/>
-              </svg>
-            </div>
-            <div class="agent-role-badge" style="background: rgba(192,132,252,0.15); border-color: rgba(192,132,252,0.3); color: #c084fc">DESIGNER</div>
-            <div class="agent-palette">
-              <span style="background:#c084fc"></span>
-              <span style="background:#f472b6"></span>
-              <span style="background:#60a5fa"></span>
-              <span style="background:#34d399"></span>
-            </div>
+            <div class="agent-role-badge" style="background: rgba(192,132,252,0.12); border-color: rgba(192,132,252,0.3); color: #c084fc">DESIGNER</div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-1 text-text-primary">Aria</h3>
-            <p class="text-sm font-medium mb-4" style="color: #c084fc">UI/UX 設計師 · Designer</p>
-            <ul class="text-text-secondary text-sm space-y-1.5">
-              <li>· 設計介面視覺與互動邏輯</li>
-              <li>· 確保設計系統一致性</li>
-              <li>· 提供設計規格給 Dev 實作</li>
+          <div class="agent-card-body">
+            <h3 class="agent-name">Aria</h3>
+            <p class="agent-role-title" style="color: #c084fc">UI/UX 設計師 · Designer</p>
+            <ul class="agent-skills" aria-label="主要職責">
+              <li>設計介面視覺與互動邏輯</li>
+              <li>確保設計系統一致性</li>
+              <li>提供設計規格給 Dev 實作</li>
             </ul>
           </div>
-        </div>
+        </article>
 
         <!-- Tester -->
-        <div class="agent-card section-reveal" style="--accent: #f87171; --accent-rgb: 248,113,113">
-          <div class="agent-card-header" style="--accent: #f87171">
+        <article class="agent-card section-reveal" style="--accent: #f87171; --accent-rgb: 248,113,113" tabindex="0" aria-label="Tester，QA 測試員">
+          <div class="agent-card-header" aria-hidden="true">
+            <div class="agent-avatar">
+              <span class="agent-avatar-letter">T</span>
+              <div class="agent-avatar-ring ring-1"></div>
+              <div class="agent-avatar-ring ring-2"></div>
+            </div>
             <div class="agent-online-badge">
               <span class="online-dot"></span>
-              online
+              ONLINE
             </div>
-            <div class="agent-icon-wrap" style="background: rgba(248,113,113,0.15); border-color: rgba(248,113,113,0.35)">
-              <!-- Tester: magnifying glass icon -->
-              <svg class="agent-svg-icon" viewBox="0 0 40 40" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linecap="round">
-                <circle cx="17" cy="17" r="9"/>
-                <line x1="23.5" y1="23.5" x2="33" y2="33"/>
-              </svg>
-            </div>
-            <div class="agent-role-badge" style="background: rgba(248,113,113,0.15); border-color: rgba(248,113,113,0.3); color: #f87171">QA</div>
-            <div class="agent-qa-bar">
-              <div class="qa-bar-fill" style="width: 94%; background: linear-gradient(90deg, #f87171, #fbbf24)"></div>
-              <span class="qa-bar-label" style="color: rgba(248,113,113,0.7)">94% pass</span>
-            </div>
+            <div class="agent-role-badge" style="background: rgba(248,113,113,0.12); border-color: rgba(248,113,113,0.3); color: #f87171">QA</div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-1 text-text-primary">Tester</h3>
-            <p class="text-sm font-medium mb-4" style="color: #f87171">QA 測試員 · Quality Assurance</p>
-            <ul class="text-text-secondary text-sm space-y-1.5">
-              <li>· 技術面功能測試與 Bug 驗證</li>
-              <li>· 最多 3 輪自動修正迴圈</li>
-              <li>· 通過後移交 UX 測試</li>
+          <div class="agent-card-body">
+            <h3 class="agent-name">Tester</h3>
+            <p class="agent-role-title" style="color: #f87171">QA 測試員 · Quality Assurance</p>
+            <ul class="agent-skills" aria-label="主要職責">
+              <li>技術面功能測試與 Bug 驗證</li>
+              <li>最多 3 輪自動修正迴圈</li>
+              <li>通過後移交 UX 測試</li>
             </ul>
           </div>
-        </div>
+        </article>
 
         <!-- Uma -->
-        <div class="agent-card section-reveal" style="--accent: #22d3ee; --accent-rgb: 34,211,238">
-          <div class="agent-card-header" style="--accent: #22d3ee">
+        <article class="agent-card section-reveal" style="--accent: #22d3ee; --accent-rgb: 34,211,238" tabindex="0" aria-label="Uma，UX 體驗測試">
+          <div class="agent-card-header" aria-hidden="true">
+            <div class="agent-avatar">
+              <span class="agent-avatar-letter">U</span>
+              <div class="agent-avatar-ring ring-1"></div>
+              <div class="agent-avatar-ring ring-2"></div>
+            </div>
             <div class="agent-online-badge">
               <span class="online-dot"></span>
-              online
+              ONLINE
             </div>
-            <div class="agent-icon-wrap" style="background: rgba(34,211,238,0.15); border-color: rgba(34,211,238,0.35)">
-              <!-- Uma: eye icon -->
-              <svg class="agent-svg-icon" viewBox="0 0 40 40" fill="none" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 20 C8 12 14 8 20 8 C26 8 32 12 36 20 C32 28 26 32 20 32 C14 32 8 28 4 20 Z"/>
-                <circle cx="20" cy="20" r="5"/>
-                <circle cx="20" cy="20" r="2" fill="#22d3ee"/>
-              </svg>
-            </div>
-            <div class="agent-role-badge" style="background: rgba(34,211,238,0.15); border-color: rgba(34,211,238,0.3); color: #22d3ee">UX REVIEW</div>
-            <div class="agent-score" style="color: #22d3ee">
-              <span>★★★★</span><span style="opacity:0.3">★</span>
-              <span class="score-num">8.5</span>
-            </div>
+            <div class="agent-role-badge" style="background: rgba(34,211,238,0.12); border-color: rgba(34,211,238,0.3); color: #22d3ee">UX REVIEW</div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-1 text-text-primary">Uma</h3>
-            <p class="text-sm font-medium mb-4" style="color: #22d3ee">UX 體驗測試 · UX Reviewer</p>
-            <ul class="text-text-secondary text-sm space-y-1.5">
-              <li>· 以用戶視角審視最終成果</li>
-              <li>· 評估易用性與體驗流暢度</li>
-              <li>· 最多 2 輪使用者體驗優化</li>
+          <div class="agent-card-body">
+            <h3 class="agent-name">Uma</h3>
+            <p class="agent-role-title" style="color: #22d3ee">UX 體驗測試 · UX Reviewer</p>
+            <ul class="agent-skills" aria-label="主要職責">
+              <li>以用戶視角審視最終成果</li>
+              <li>評估易用性與體驗流暢度</li>
+              <li>最多 2 輪使用者體驗優化</li>
             </ul>
           </div>
-        </div>
+        </article>
 
         <!-- Memo -->
-        <div class="agent-card section-reveal" style="--accent: #fbbf24; --accent-rgb: 251,191,36">
-          <div class="agent-card-header" style="--accent: #fbbf24">
+        <article class="agent-card section-reveal" style="--accent: #fbbf24; --accent-rgb: 251,191,36" tabindex="0" aria-label="Memo，文件管理員">
+          <div class="agent-card-header" aria-hidden="true">
+            <div class="agent-avatar">
+              <span class="agent-avatar-letter">M</span>
+              <div class="agent-avatar-ring ring-1"></div>
+              <div class="agent-avatar-ring ring-2"></div>
+            </div>
             <div class="agent-online-badge">
               <span class="online-dot"></span>
-              online
+              ONLINE
             </div>
-            <div class="agent-icon-wrap" style="background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.35)">
-              <!-- Memo: document / book icon -->
-              <svg class="agent-svg-icon" viewBox="0 0 40 40" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="8" y="6" width="20" height="28" rx="2" fill="rgba(251,191,36,0.1)"/>
-                <path d="M28 6 L32 10 L32 34 L12 34" stroke-width="1.5"/>
-                <line x1="13" y1="13" x2="23" y2="13"/>
-                <line x1="13" y1="18" x2="23" y2="18"/>
-                <line x1="13" y1="23" x2="20" y2="23"/>
-              </svg>
-            </div>
-            <div class="agent-role-badge" style="background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.3); color: #fbbf24">DOCS</div>
-            <div class="agent-log-lines" style="color: rgba(251,191,36,0.4)">LOG 12:34:21</div>
+            <div class="agent-role-badge" style="background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.3); color: #fbbf24">DOCS</div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-1 text-text-primary">Memo</h3>
-            <p class="text-sm font-medium mb-4" style="color: #fbbf24">文件管理員 · Documentation</p>
-            <ul class="text-text-secondary text-sm space-y-1.5">
-              <li>· 整理任務結果與執行摘要</li>
-              <li>· 更新各 Agent 的知識記憶</li>
-              <li>· 確保知識在團隊中持久傳承</li>
+          <div class="agent-card-body">
+            <h3 class="agent-name">Memo</h3>
+            <p class="agent-role-title" style="color: #fbbf24">文件管理員 · Documentation</p>
+            <ul class="agent-skills" aria-label="主要職責">
+              <li>整理任務結果與執行摘要</li>
+              <li>更新各 Agent 的知識記憶</li>
+              <li>確保知識在團隊中持久傳承</li>
             </ul>
           </div>
-        </div>
+        </article>
 
       </div>
     </div>
   </section>
 
   <!-- ===== HOW IT WORKS ===== -->
-  <section id="how" class="py-24 px-6 section-bg-alt">
+  <section id="how" class="py-28 px-6 section-bg-alt">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16 section-reveal">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-text-primary">How it Works</h2>
-        <p class="text-text-secondary text-lg">從輸入到交付，兩階段全自動協作流程</p>
+      <!-- Section header -->
+      <div class="section-header section-reveal">
+        <span class="eyebrow-label">WORKFLOW</span>
+        <h2 class="section-title">How it Works</h2>
+        <p class="section-subtitle">從輸入到交付，兩階段全自動協作流程</p>
       </div>
 
       <!-- Phase A -->
       <div class="mb-12 section-reveal">
         <div class="flex items-center gap-3 mb-6">
-          <span class="phase-badge" style="background: rgba(79,142,247,0.15); color: #4f8ef7; border-color: rgba(79,142,247,0.3)">Phase A</span>
+          <span class="phase-badge" style="background: rgba(96,165,250,0.12); color: #60a5fa; border-color: rgba(96,165,250,0.3)">Phase A</span>
           <h3 class="text-xl font-semibold text-text-primary">意圖理解</h3>
         </div>
         <div class="flow-container">
@@ -327,12 +323,12 @@
             <div class="flow-icon">💬</div>
             <div class="flow-label">用戶輸入</div>
           </div>
-          <div class="pipeline-connector" style="background: linear-gradient(90deg, #4f8ef7, #4f8ef7)"></div>
-          <div class="flow-step" data-detail="Alex 分析語意，判斷任務類型與複雜度" style="--step-color: #4f8ef7">
+          <div class="pipeline-connector" style="background: linear-gradient(90deg, #60a5fa, #60a5fa)" aria-hidden="true"></div>
+          <div class="flow-step" data-detail="Alex 分析語意，判斷任務類型與複雜度" style="--step-color: #60a5fa">
             <div class="flow-icon">🧠</div>
             <div class="flow-label">Alex 分析</div>
           </div>
-          <div class="pipeline-connector" style="background: linear-gradient(90deg, #4f8ef7, #fbbf24)"></div>
+          <div class="pipeline-connector" style="background: linear-gradient(90deg, #60a5fa, #fbbf24)" aria-hidden="true"></div>
           <div class="flow-branches">
             <div class="branch-item branch-chat" data-detail="閒聊直接由 Alex 回應，無需啟動工作流">
               <span class="branch-tag">閒聊</span>
@@ -356,38 +352,38 @@
       <!-- Phase B -->
       <div class="section-reveal">
         <div class="flex items-center gap-3 mb-6">
-          <span class="phase-badge" style="background: rgba(52,211,153,0.15); color: #34d399; border-color: rgba(52,211,153,0.3)">Phase B</span>
+          <span class="phase-badge" style="background: rgba(52,211,153,0.12); color: #34d399; border-color: rgba(52,211,153,0.3)">Phase B</span>
           <h3 class="text-xl font-semibold text-text-primary">協作執行</h3>
         </div>
         <div class="pipeline-container">
-          <div class="pipeline-step" data-detail="Alex 根據任務拆解工作，指派給對應 Agent" style="--c: #4f8ef7">
+          <div class="pipeline-step" data-detail="Alex 根據任務拆解工作，指派給對應 Agent" style="--c: #60a5fa; --c-rgb: 96,165,250">
             <div class="pipeline-icon">📋</div>
             <div class="pipeline-name">Alex 分派</div>
           </div>
-          <div class="pipeline-connector" style="background: linear-gradient(90deg, #4f8ef7, #34d399)"></div>
-          <div class="pipeline-step" data-detail="Dev 執行開發實作，完成後提交審查" style="--c: #34d399">
+          <div class="pipeline-connector" style="background: linear-gradient(90deg, #60a5fa, #34d399)" aria-hidden="true"></div>
+          <div class="pipeline-step" data-detail="Dev 執行開發實作，完成後提交審查" style="--c: #34d399; --c-rgb: 52,211,153">
             <div class="pipeline-icon">⚙️</div>
             <div class="pipeline-name">Dev 開發</div>
           </div>
-          <div class="pipeline-connector" style="background: linear-gradient(90deg, #34d399, #f87171)"></div>
-          <div class="pipeline-step qa-step" data-detail="Tester 執行技術測試，失敗最多重試 3 輪" style="--c: #f87171">
+          <div class="pipeline-connector" style="background: linear-gradient(90deg, #34d399, #f87171)" aria-hidden="true"></div>
+          <div class="pipeline-step qa-step" data-detail="Tester 執行技術測試，失敗最多重試 3 輪" style="--c: #f87171; --c-rgb: 248,113,113">
             <div class="pipeline-icon">🔍</div>
             <div class="pipeline-name">Tester QA</div>
             <div class="pipeline-badge">max 3 輪</div>
           </div>
-          <div class="pipeline-connector" style="background: linear-gradient(90deg, #f87171, #22d3ee)"></div>
-          <div class="pipeline-step qa-step" data-detail="Uma 從用戶視角審查，失敗最多重試 2 輪" style="--c: #22d3ee">
+          <div class="pipeline-connector" style="background: linear-gradient(90deg, #f87171, #22d3ee)" aria-hidden="true"></div>
+          <div class="pipeline-step qa-step" data-detail="Uma 從用戶視角審查，失敗最多重試 2 輪" style="--c: #22d3ee; --c-rgb: 34,211,238">
             <div class="pipeline-icon">✨</div>
             <div class="pipeline-name">Uma UX</div>
             <div class="pipeline-badge">max 2 輪</div>
           </div>
-          <div class="pipeline-connector" style="background: linear-gradient(90deg, #22d3ee, #fbbf24)"></div>
-          <div class="pipeline-step" data-detail="Memo 整理執行摘要並更新團隊記憶，完成交付" style="--c: #fbbf24">
+          <div class="pipeline-connector" style="background: linear-gradient(90deg, #22d3ee, #fbbf24)" aria-hidden="true"></div>
+          <div class="pipeline-step" data-detail="Memo 整理執行摘要並更新團隊記憶，完成交付" style="--c: #fbbf24; --c-rgb: 251,191,36">
             <div class="pipeline-icon">📝</div>
             <div class="pipeline-name">Memo 整理</div>
           </div>
-          <div class="pipeline-connector" style="background: linear-gradient(90deg, #fbbf24, #a3e635)"></div>
-          <div class="pipeline-step done-step" style="--c: #a3e635">
+          <div class="pipeline-connector" style="background: linear-gradient(90deg, #fbbf24, #a3e635)" aria-hidden="true"></div>
+          <div class="pipeline-step done-step" style="--c: #a3e635; --c-rgb: 163,230,53">
             <div class="pipeline-icon">✅</div>
             <div class="pipeline-name">完成</div>
           </div>
@@ -398,18 +394,21 @@
   </section>
 
   <!-- ===== HIGHLIGHTS ===== -->
-  <section id="highlights" class="py-24 px-6">
+  <section id="highlights" class="py-28 px-6">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16 section-reveal">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-text-primary">架構亮點</h2>
-        <p class="text-text-secondary text-lg">讓 AI 協作真正可靠的三大設計</p>
+      <!-- Section header -->
+      <div class="section-header section-reveal">
+        <span class="eyebrow-label">ARCHITECTURE</span>
+        <h2 class="section-title">架構亮點</h2>
+        <p class="section-subtitle">讓 AI 協作真正可靠的三大設計</p>
       </div>
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <div class="highlight-card section-reveal" style="--hl-from: #f87171; --hl-to: #ec4899">
-          <div class="highlight-accent-bar" style="background: linear-gradient(90deg, #f87171, #ec4899)"></div>
-          <div class="p-6 pt-8">
-            <div class="text-4xl mb-4">🔄</div>
+        <div class="highlight-card section-reveal" style="--hl-from: #f87171; --hl-to: #ec4899; --hl-from-rgb: 248,113,113">
+          <div class="highlight-accent-bar" style="background: linear-gradient(90deg, #f87171, #ec4899)" aria-hidden="true"></div>
+          <div class="p-7 pt-8">
+            <div class="highlight-icon" style="background: linear-gradient(135deg, rgba(248,113,113,0.15) 0%, rgba(236,72,153,0.05) 100%); border-color: rgba(248,113,113,0.15)" aria-hidden="true">🔄</div>
             <h3 class="text-xl font-bold mb-3 text-text-primary">雙重品質把關</h3>
             <p class="text-text-secondary text-sm leading-relaxed">
               Tester 負責技術層面的功能驗證，Uma 負責使用者體驗審查，兩道關卡確保交付品質。
@@ -417,10 +416,10 @@
           </div>
         </div>
 
-        <div class="highlight-card section-reveal" style="--hl-from: #6366f1; --hl-to: #8b5cf6">
-          <div class="highlight-accent-bar" style="background: linear-gradient(90deg, #6366f1, #8b5cf6)"></div>
-          <div class="p-6 pt-8">
-            <div class="text-4xl mb-4">🧠</div>
+        <div class="highlight-card section-reveal" style="--hl-from: #6366f1; --hl-to: #8b5cf6; --hl-from-rgb: 99,102,241">
+          <div class="highlight-accent-bar" style="background: linear-gradient(90deg, #6366f1, #8b5cf6)" aria-hidden="true"></div>
+          <div class="p-7 pt-8">
+            <div class="highlight-icon" style="background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.05) 100%); border-color: rgba(99,102,241,0.15)" aria-hidden="true">🧠</div>
             <h3 class="text-xl font-bold mb-3 text-text-primary">持久記憶系統</h3>
             <p class="text-text-secondary text-sm leading-relaxed">
               每次任務完成後，Memo 更新各 Agent 的知識檔案，讓團隊在跨對話中持續學習成長。
@@ -428,10 +427,10 @@
           </div>
         </div>
 
-        <div class="highlight-card section-reveal" style="--hl-from: #34d399; --hl-to: #22d3ee">
-          <div class="highlight-accent-bar" style="background: linear-gradient(90deg, #34d399, #22d3ee)"></div>
-          <div class="p-6 pt-8">
-            <div class="text-4xl mb-4">🔁</div>
+        <div class="highlight-card section-reveal" style="--hl-from: #34d399; --hl-to: #22d3ee; --hl-from-rgb: 52,211,153">
+          <div class="highlight-accent-bar" style="background: linear-gradient(90deg, #34d399, #22d3ee)" aria-hidden="true"></div>
+          <div class="p-7 pt-8">
+            <div class="highlight-icon" style="background: linear-gradient(135deg, rgba(52,211,153,0.15) 0%, rgba(34,211,238,0.05) 100%); border-color: rgba(52,211,153,0.15)" aria-hidden="true">🔁</div>
             <h3 class="text-xl font-bold mb-3 text-text-primary">自動修正迴圈</h3>
             <p class="text-text-secondary text-sm leading-relaxed">
               測試失敗自動觸發重試機制，QA 最多 3 輪、UX 最多 2 輪，避免無限迴圈的同時保障品質。
@@ -444,19 +443,21 @@
   </section>
 
   <!-- ===== OPEN SOURCE CTA ===== -->
-  <section id="open-source" class="py-24 px-6 section-bg-alt">
+  <section id="open-source" class="py-28 px-6 section-bg-alt">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-sm mb-8 text-text-secondary backdrop-blur-sm section-reveal">
-        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        Open Source
+      <div class="inline-flex items-center gap-2 status-pill mb-8 section-reveal">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        Open Source · MIT License
       </div>
-      <h2 class="text-4xl md:text-5xl font-black mb-6 text-text-primary section-reveal">
+
+      <h2 class="section-title section-reveal mb-4">
         5 分鐘，複製你的<br><span class="gradient-text">AI Office</span>
       </h2>
-      <p class="text-lg text-text-secondary max-w-2xl mx-auto mb-12 leading-relaxed section-reveal">
+      <p class="text-lg text-text-secondary max-w-2xl mx-auto mb-14 leading-relaxed section-reveal">
         完整開源的 Claude Agent 協作框架。Fork 後改一個設定檔，你就有一個專屬的虛擬 AI 團隊。
       </p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 text-left section-reveal">
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14 text-left section-reveal">
         <div class="oss-step">
           <div class="oss-step-num">01</div>
           <div class="oss-step-title">Fork Repo</div>
@@ -473,43 +474,46 @@
           <div class="oss-step-desc">輸入需求，AI 團隊立刻接管，自動規劃到交付</div>
         </div>
       </div>
+
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 section-reveal">
-        <a href="https://github.com/david8015838-create/ai-office-website" target="_blank" rel="noopener" class="github-cta-btn inline-flex items-center gap-3 font-semibold px-8 py-4 rounded-full">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <a href="https://github.com/david8015838-create/ai-office-website" target="_blank" rel="noopener" class="btn-primary">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           在 GitHub 上 Fork
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
-        <a href="#how" class="outline-cta-btn inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-full">
+        <a href="#how" class="btn-secondary">
           查看工作流程
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </a>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="border-t border-bg-overlay py-12 px-6">
+  <footer class="site-footer">
+    <div class="footer-divider" aria-hidden="true"></div>
     <div class="max-w-5xl mx-auto">
       <div class="flex flex-col md:flex-row items-start justify-between gap-8 mb-8">
         <div class="max-w-xs">
           <div class="text-xl font-black gradient-text mb-2">AI Office</div>
-          <div class="text-sm text-text-muted leading-relaxed">
+          <p class="text-sm text-text-muted leading-relaxed">
             虛擬 AI 辦公室 · 讓 AI 團隊為你工作<br>
-            <span class="text-xs mt-1 block">Built with Claude · Powered by Anthropic</span>
-          </div>
+            <span class="text-xs mt-1 block opacity-70">Built with Claude · Powered by Anthropic</span>
+          </p>
         </div>
-        <div class="flex items-center gap-6 text-sm text-text-secondary">
-          <a href="#team" class="hover:text-text-primary transition-colors">Team</a>
-          <a href="#how" class="hover:text-text-primary transition-colors">How it Works</a>
+        <nav class="flex items-center gap-6 text-sm text-text-secondary" aria-label="頁尾導覽">
+          <a href="#team"       class="hover:text-text-primary transition-colors">Team</a>
+          <a href="#how"        class="hover:text-text-primary transition-colors">How it Works</a>
           <a href="#highlights" class="hover:text-text-primary transition-colors">架構亮點</a>
           <a href="#open-source" class="hover:text-text-primary transition-colors">開源</a>
-        </div>
-        <a href="https://github.com/david8015838-create/ai-office-website" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary border border-white/10 hover:border-white/20 rounded-full px-4 py-2 transition-all">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </nav>
+        <a href="https://github.com/david8015838-create/ai-office-website" target="_blank" rel="noopener"
+           class="btn-github" style="padding: 10px 20px; min-height: 44px; font-size: 14px;">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           Fork on GitHub
         </a>
       </div>
-      <div class="border-t border-bg-overlay pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-text-muted">
+      <div class="footer-bottom">
         <span>MIT License · Open Source · 2026</span>
         <span>Made with Claude · AI Office Framework</span>
       </div>
